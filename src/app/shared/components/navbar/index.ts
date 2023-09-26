@@ -1,3 +1,11 @@
+import { NavbarAvatarComponent } from './navbar-avatar/navbar-avatar.component';
 import { NavbarComponent } from './navbar.component';
+import { NOT_SIGNED_IN_NAV_COMPONENTS } from './not-signed-in-nav';
+import { SIGNED_IN_NAV_COMPONENTS } from './signed-in-nav';
 
-export const NAVBAR_COMPONENTS = [NavbarComponent];
+export const NAVBAR_COMPONENTS = [
+  NavbarComponent,
+  ...NOT_SIGNED_IN_NAV_COMPONENTS,
+  ...SIGNED_IN_NAV_COMPONENTS,
+  NavbarAvatarComponent,
+];

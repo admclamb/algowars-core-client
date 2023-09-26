@@ -2,12 +2,14 @@
   <div class="mx-auto max-w-4xl flex flex-row justify-between items-center">
     <ul>
       <li>
-        <a routerLink="/">Algo Wars</a>
+        <a routerLink="/" class="px-3 py-2 block">Algo Wars</a>
       </li>
     </ul>
-    <ul class="flex gap-5">
-      <li>Login</li>
-      <li>Signup</li>
-    </ul>
+    <ng-container *ngIf="isAuthenticated$ | async; else loggedOut">
+      <app-signed-in-nav></app-signed-in-nav>
+    </ng-container>
+    <ng-template #loggedOut>
+      <app-not-signed-in-nav></app-not-signed-in-nav>
+    </ng-template>
   </div>
 </nav>
