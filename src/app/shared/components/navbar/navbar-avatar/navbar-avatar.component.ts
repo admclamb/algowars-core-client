@@ -9,4 +9,13 @@ export class NavbarAvatarComponent {
   @Input() width?: string = 'w-8';
   @Input() height?: string = 'w-8';
   @Input() id?: string = '';
+  isDropdownOpen: boolean = false;
+
+  toggleDropdown(): void {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
+
+  clickedOutside(): void {
+    this.isDropdownOpen = false;
+  }
 }

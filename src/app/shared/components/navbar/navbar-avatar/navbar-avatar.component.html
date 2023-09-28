@@ -1,13 +1,17 @@
-<div class="relative">
+<div class="relative" clickOutside (clickOutside)="clickedOutside()">
   <button
     id="navbar-avatar-button"
     class="p-1 hover:bg-slate-700 duration-200 ease-out rounded-full"
+    (click)="toggleDropdown()"
   >
     <app-avatar
       [avatarUrl]="avatarUrl"
       [width]="width"
       [height]="height"
-      [id]="id"
+      id="navbar-avatar-button"
     ></app-avatar>
   </button>
+  <app-navbar-avatar-dropdown
+    *ngIf="isDropdownOpen"
+  ></app-navbar-avatar-dropdown>
 </div>

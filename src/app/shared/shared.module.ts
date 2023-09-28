@@ -5,6 +5,7 @@ import { LoginButtonComponent } from './components/button/login-button/login-but
 import { LogoutButtonComponent } from './components/button/logout-button/logout-button.component';
 import { SignupButtonComponent } from './components/button/signup-button/signup-button.component';
 import { AvatarComponent } from './components/avatar/avatar.component';
+import { ClickOutsideDirective } from './directives/click-outside.directive';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { AvatarComponent } from './components/avatar/avatar.component';
     LogoutButtonComponent,
     SignupButtonComponent,
     AvatarComponent,
+    ClickOutsideDirective,
   ],
   imports: [CommonModule],
   exports: [...COMPONENTS],
