@@ -2,7 +2,9 @@
   <div class="mx-auto max-w-4xl flex flex-row justify-between items-center">
     <ul>
       <li>
-        <a routerLink="/" class="px-3 py-2 block">Algo Wars</a>
+        <a routerLink="/banana" class="px-3 py-2 block font-semibold"
+          >Algo Wars</a
+        >
       </li>
     </ul>
     <ng-container *ngIf="isAuthenticated$ | async; else loggedOut">

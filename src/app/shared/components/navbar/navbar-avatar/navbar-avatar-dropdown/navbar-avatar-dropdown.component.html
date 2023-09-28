@@ -2,6 +2,31 @@
   class="absolute top-[120%] right-0 border border-slate-700 rounded bg-slate-900 w-64 p-3 fade-in ease-in duration-200"
 >
   <div class="py-2 border-b border-slate-700">
-    <h1>TEST</h1>
+    <a
+      routerLink="/profile"
+      class="px-3 py-2 block w-full test-start flex flex-col gap-1 bg-slate-900 duration-200 ease-out hover:bg-slate-800 rounded"
+    >
+      <span>{{ (user$ | async)?.nickname }}</span>
+      <span class="text-sm text-slate-400">@adylanmclamb</span>
+    </a>
+  </div>
+  <div class="py-2 border-b border-slate-700">
+    <a
+      routerLink="/profile"
+      class="px-3 w-full text-start block py-2 bg-slate-900 duration-200 ease-out hover:bg-slate-800 rounded"
+    >
+      Profile
+    </a>
+    <a
+      routerLink="/profile"
+      class="px-3 w-full text-start block py-2 bg-slate-900 duration-200 ease-out hover:bg-slate-800 rounded"
+    >
+      Saves
+    </a>
+  </div>
+  <div class="py-2 border-t border-slate-700 block">
+    <app-logout-button
+      class="w-full text-start block bg-slate-900 duration-200 ease-out hover:bg-slate-800 rounded"
+    ></app-logout-button>
   </div>
 </div>
