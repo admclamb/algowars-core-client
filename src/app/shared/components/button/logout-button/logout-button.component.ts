@@ -5,7 +5,9 @@ import { AuthService } from '@auth0/auth0-angular';
 @Component({
   selector: 'app-logout-button',
   template: `
-    <button class="px-3 py-2" (click)="handleLogout()">Log Out</button>
+    <button class="w-full text-start px-3 py-2" (click)="handleLogout()">
+      Log Out
+    </button>
   `,
 })
 export class LogoutButtonComponent {

@@ -6,6 +6,7 @@ import { LogoutButtonComponent } from './components/button/logout-button/logout-
 import { SignupButtonComponent } from './components/button/signup-button/signup-button.component';
 import { AvatarComponent } from './components/avatar/avatar.component';
 import { ClickOutsideDirective } from './directives/click-outside.directive';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { ClickOutsideDirective } from './directives/click-outside.directive';
     AvatarComponent,
     ClickOutsideDirective,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   exports: [...COMPONENTS],
 })
 export class SharedModule {}

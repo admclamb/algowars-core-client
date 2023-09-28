@@ -1,10 +1,14 @@
 <nav class="py-5 border-slate-700 border-b">
   <div class="mx-auto max-w-4xl flex flex-row justify-between items-center">
-    <ul>
+    <ul class="flex items-center">
       <li>
-        <a routerLink="/banana" class="px-3 py-2 block font-semibold"
-          >Algo Wars</a
-        >
+        <a routerLink="/" class="px-3 py-2 block font-semibold">Algo Wars</a>
+      </li>
+      <li>
+        <a routerLink="home" class="px-3 py-2 block">Home</a>
+      </li>
+      <li>
+        <a routerLink="problems" class="px-3 py-2 block">Problems</a>
       </li>
     </ul>
     <ng-container *ngIf="isAuthenticated$ | async; else loggedOut">
