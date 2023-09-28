@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SignedInNavComponent } from './signed-in-nav.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 describe('SignedInNavComponent', () => {
   let component: SignedInNavComponent;
@@ -8,7 +9,8 @@ describe('SignedInNavComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [SignedInNavComponent]
+      declarations: [],
+      imports: [SharedModule],
     });
     fixture = TestBed.createComponent(SignedInNavComponent);
     component = fixture.componentInstance;

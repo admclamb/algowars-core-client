@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NavbarAvatarComponent } from './navbar-avatar.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 describe('NavbarAvatarComponent', () => {
   let component: NavbarAvatarComponent;
@@ -8,7 +9,8 @@ describe('NavbarAvatarComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [NavbarAvatarComponent]
+      declarations: [NavbarAvatarComponent],
+      imports: [SharedModule],
     });
     fixture = TestBed.createComponent(NavbarAvatarComponent);
     component = fixture.componentInstance;
