@@ -1,0 +1,26 @@
+<div
+  [ngClass]="{ hidden: !isOpen, 'sm:hidden navbar-canvas-backdrop': true }"
+  (click)="closeCanvas()"
+></div>
+<div
+  [ngClass]="{
+    'right-0': isOpen,
+    'left-full': !isOpen
+  }"
+  class="z-50 fixed top-0 bottom-0 duration-200 sm:hidden ease-out bg-slate-900 w-11/12 sm:w-3/5 lg:w-3/12 border-l border-l-slate-700"
+>
+  <div class="p-5 flex border-b border-slate-700" (click)="closeCanvas()">
+    <a routerLink="/" class="py-2 block text-lg font-semibold">Algo Wars</a>
+    <button
+      class="ml-auto w-10 h-10 rounded ease-out duration-200 hover:bg-slate-800 active:bg-slate-700"
+    >
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+  <ng-container *ngIf="isAuthenticated$ | async; else loggedOut">
+    <app-navbar-canvas-signed-in></app-navbar-canvas-signed-in>
+  </ng-container>
+  <ng-template #loggedOut>
+    <app-navbar-canvas-not-signed-in></app-navbar-canvas-not-signed-in>
+  </ng-template>
+</div>

@@ -10,4 +10,13 @@ export class NavbarComponent {
   constructor(private auth: AuthService) {}
 
   isAuthenticated$ = this.auth.isAuthenticated$;
+  isCanvasOpen: boolean = false;
+
+  toggleCanvas(): void {
+    this.isCanvasOpen = !this.isCanvasOpen;
+  }
+
+  closeCanvas(): void {
+    this.isCanvasOpen = false;
+  }
 }

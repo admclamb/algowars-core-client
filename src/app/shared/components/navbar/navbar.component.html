@@ -1,21 +1,35 @@
-<nav class="py-5 border-slate-700 border-b">
+<nav class="py-5 px-3 lg:px-0 border-slate-700 border-b">
   <div class="mx-auto max-w-4xl flex flex-row justify-between items-center">
     <ul class="flex items-center">
       <li>
-        <a routerLink="/" class="px-3 py-2 block font-semibold">Algo Wars</a>
+        <a routerLink="/" class="px-3 py-2 block text-lg font-semibold"
+          >Algo Wars</a
+        >
       </li>
-      <li>
+      <li class="hidden sm:block">
         <a routerLink="home" class="px-3 py-2 block">Home</a>
       </li>
-      <li>
+      <li class="hidden sm:block">
         <a routerLink="problems" class="px-3 py-2 block">Problems</a>
       </li>
     </ul>
-    <ng-container *ngIf="isAuthenticated$ | async; else loggedOut">
-      <app-signed-in-nav></app-signed-in-nav>
-    </ng-container>
-    <ng-template #loggedOut>
-      <app-not-signed-in-nav></app-not-signed-in-nav>
-    </ng-template>
+    <div class="hidden sm:block">
+      <ng-container *ngIf="isAuthenticated$ | async; else loggedOut">
+        <app-signed-in-nav></app-signed-in-nav>
+      </ng-container>
+      <ng-template #loggedOut>
+        <app-not-signed-in-nav></app-not-signed-in-nav>
+      </ng-template>
+    </div>
+    <button
+      class="w-10 h-10 rounded ease-out duration-200 hover:bg-slate-800 active:bg-slate-700 sm:hidden"
+      (click)="toggleCanvas()"
+    >
+      <i class="fa-solid fa-bars"></i>
+    </button>
   </div>
+  <app-navbar-canvas
+    [isOpen]="isCanvasOpen"
+    (closeCanvasEvent)="closeCanvas()"
+  ></app-navbar-canvas>
 </nav>
