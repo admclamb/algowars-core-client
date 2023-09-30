@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { environment as env } from 'src/environments/environment';
 import { AuthModule } from '@auth0/auth0-angular';
 import { SharedModule } from './shared';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -12,6 +13,7 @@ import { SharedModule } from './shared';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
+    HttpClientModule,
     AuthModule.forRoot({
       ...env.auth0,
     }),

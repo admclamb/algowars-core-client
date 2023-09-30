@@ -43,7 +43,6 @@ const envConfigFile = `export const environment = {
       await mkdir(targetDir, { recursive: true });
       // Write the environment file to defaultTargetPath
       await writeFilePromisified(defaultTargetPath, envConfigFile);
-      console.log(`File "${defaultTargetPath}" created successfully.`);
     } else {
       console.error(err);
       throw err;
@@ -56,7 +55,6 @@ const envConfigFile = `export const environment = {
     if (err.code === 'ENOENT') {
       // File does not exist, create the file
       await writeFilePromisified(targetPath, envConfigFile);
-      console.log(`File "${targetPath}" created successfully.`);
     } else {
       console.error(err);
       throw err;
