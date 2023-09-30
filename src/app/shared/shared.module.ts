@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { NavbarCanvasComponent } from './components/navbar/navbar-canvas/navbar-canvas.component';
 import { NavbarCanvasSignedInComponent } from './components/navbar/navbar-canvas/navbar-canvas-signed-in/navbar-canvas-signed-in.component';
 import { NavbarCanvasNotSignedInComponent } from './components/navbar/navbar-canvas/navbar-canvas-not-signed-in/navbar-canvas-not-signed-in.component';
+import { ProblemsTableComponent } from './components/problems/problems-table/problems-table.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { NavbarCanvasNotSignedInComponent } from './components/navbar/navbar-can
     NavbarCanvasComponent,
     NavbarCanvasSignedInComponent,
     NavbarCanvasNotSignedInComponent,
+    ProblemsTableComponent,
   ],
   imports: [CommonModule, RouterModule],
   exports: [...COMPONENTS],

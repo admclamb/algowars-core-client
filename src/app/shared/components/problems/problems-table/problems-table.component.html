@@ -1,0 +1,24 @@
+<table class="table-auto w-full text-left text-slate-400">
+  <thead class="text-slate-400 font-bold uppercase bg-slate-700">
+    <tr class="p-3">
+      <th scope="col" class="px-6 py-3">Title</th>
+      <th scope="col" class="px-6 py-3">Likes</th>
+      <th scope="col" class="px-6 py-3">Dislikes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let problem of problems">
+      <th
+        scope="row"
+        class="px-6 py-3 font-medium text-white whitespace-nowrap"
+      >
+        {{ problem.title }}
+      </th>
+      <td class="px-6 py-4">{{ problem.likes }}</td>
+      <td class="px-6 py-4">{{ problem.dislikes }}</td>
+    </tr>
+  </tbody>
+</table>
+<div *ngIf="problems.length === 0">
+  <p>No Problems found.</p>
+</div>
