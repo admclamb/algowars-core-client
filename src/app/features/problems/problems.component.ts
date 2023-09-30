@@ -15,6 +15,7 @@ export class ProblemsComponent {
   problems: ProblemModel[] = [];
   hasMoreProblems: boolean = false;
   error: AppErrorModel | null = null;
+  problemsAsString: string = '';
 
   constructor(public problemService: ProblemService) {}
 
@@ -28,6 +29,7 @@ export class ProblemsComponent {
       .subscribe((response) => {
         const { data, error } = response;
         if (data) {
+          this.problemsAsString = JSON.stringify(data);
           if (data?.results) {
             this.problems.push(...data.results);
           }
