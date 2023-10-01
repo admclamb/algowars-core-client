@@ -16,6 +16,7 @@ import { ProblemQuestionComponent } from './components/problem/problem-question/
 import { ProblemCodeComponent } from './components/problem/problem-code/problem-code.component';
 import { ProblemTestComponent } from './components/problem/problem-test/problem-test.component';
 import { ProblemQuestionParserComponent } from './components/problem/problem-question/problem-question-parser/problem-question-parser.component';
+import { ErrorAlertComponent } from './components/errors/error-alert/error-alert.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ProblemQuestionParserComponent } from './components/problem/problem-que
     ProblemCodeComponent,
     ProblemTestComponent,
     ProblemQuestionParserComponent,
+    ErrorAlertComponent,
   ],
   imports: [CommonModule, RouterModule],
   exports: [...COMPONENTS],

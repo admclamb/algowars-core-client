@@ -15,11 +15,11 @@ import { ProblemModel } from 'src/app/features/problem/models/problem.model';
 export class ProblemService {
   constructor(public externalApiService: ExternalApiService) {}
 
-  getProblems = ({
+  getProblems({
     page,
     size,
     timestamp,
-  }: PaginationConfig): Observable<ApiResponseModel<ProblemsModel | null>> => {
+  }: PaginationConfig): Observable<ApiResponseModel<ProblemsModel | null>> {
     const params = new HttpParams()
       .set('page', page)
       .set('size', size)
@@ -43,11 +43,11 @@ export class ProblemService {
         });
       })
     );
-  };
+  }
 
-  getProblemById = (
+  getProblemById(
     problemId: number
-  ): Observable<ApiResponseModel<ProblemModel | null>> => {
+  ): Observable<ApiResponseModel<ProblemModel | null>> {
     const config: RequestConfigModel = {
       url: `${env.api.serverUrl}/api/problem/find/${problemId}`,
       method: 'GET',
@@ -66,5 +66,5 @@ export class ProblemService {
         });
       })
     );
-  };
+  }
 }
