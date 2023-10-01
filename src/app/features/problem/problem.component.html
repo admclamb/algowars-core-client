@@ -1,0 +1,21 @@
+<div class="flex flex-col h-screen">
+  <app-navbar [maxWidth]="'w-full'" [padding]="'p-5'"></app-navbar>
+  <div class="flex flex-col gap-5 grow">
+    <div class="mx-auto w-full grid grid-cols-12 gap-x-5 grow p-5">
+      <app-problem-question
+        [problem]="problem"
+        class="col-span-5"
+      ></app-problem-question>
+      <div class="col-span-7">
+        <app-problem-code></app-problem-code>
+        <app-problem-test></app-problem-test>
+      </div>
+    </div>
+    <div class="border-t border-slate-700 p-5 flex">
+      <ul class="ml-auto flex gap-5">
+        <li><button class="px-3 py-2 border rounded w-24">Run</button></li>
+        <li><button class="px-3 py-2 border rounded w-24">Submit</button></li>
+      </ul>
+    </div>
+  </div>
+</div>

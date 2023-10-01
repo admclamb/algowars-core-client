@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
@@ -7,6 +7,8 @@ import { AuthService } from '@auth0/auth0-angular';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
+  @Input() maxWidth: string = 'max-w-4xl';
+  @Input() padding: string = 'py-5 px-3 lg:px-0';
   constructor(private auth: AuthService) {}
 
   isAuthenticated$ = this.auth.isAuthenticated$;

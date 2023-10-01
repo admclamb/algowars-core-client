@@ -17,6 +17,19 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'problem/:problemId',
+    loadChildren: () =>
+      import('./features/problem/problem.module').then((m) => m.ProblemModule),
+  },
+  {
+    path: 'problem/create',
+    loadChildren: () =>
+      import('./features/create-problem/create-problem.module').then(
+        (m) => m.CreateProblemModule
+      ),
+    canActivate: [AuthGuard],
+  },
+  {
     path: 'profile',
     loadChildren: () =>
       import('./features/profile/profile.module').then((m) => m.ProfileModule),

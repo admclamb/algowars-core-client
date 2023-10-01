@@ -11,6 +11,11 @@ import { NavbarCanvasComponent } from './components/navbar/navbar-canvas/navbar-
 import { NavbarCanvasSignedInComponent } from './components/navbar/navbar-canvas/navbar-canvas-signed-in/navbar-canvas-signed-in.component';
 import { NavbarCanvasNotSignedInComponent } from './components/navbar/navbar-canvas/navbar-canvas-not-signed-in/navbar-canvas-not-signed-in.component';
 import { ProblemsTableComponent } from './components/problems/problems-table/problems-table.component';
+import { CodeEditorComponent } from './components/code-editor/code-editor.component';
+import { ProblemQuestionComponent } from './components/problem/problem-question/problem-question.component';
+import { ProblemCodeComponent } from './components/problem/problem-code/problem-code.component';
+import { ProblemTestComponent } from './components/problem/problem-test/problem-test.component';
+import { ProblemQuestionParserComponent } from './components/problem/problem-question/problem-question-parser/problem-question-parser.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +29,11 @@ import { ProblemsTableComponent } from './components/problems/problems-table/pro
     NavbarCanvasSignedInComponent,
     NavbarCanvasNotSignedInComponent,
     ProblemsTableComponent,
+    CodeEditorComponent,
+    ProblemQuestionComponent,
+    ProblemCodeComponent,
+    ProblemTestComponent,
+    ProblemQuestionParserComponent,
   ],
   imports: [CommonModule, RouterModule],
   exports: [...COMPONENTS],

@@ -1,5 +1,7 @@
-<nav class="py-5 px-3 lg:px-0 border-slate-700 border-b">
-  <div class="mx-auto max-w-4xl flex flex-row justify-between items-center">
+<nav [ngClass]="[padding, 'border-slate-700 border-b']">
+  <div
+    [ngClass]="[maxWidth, 'mx-auto flex flex-row justify-between items-center']"
+  >
     <ul class="flex items-center">
       <li>
         <a routerLink="/" class="px-3 py-2 block text-lg font-semibold"
