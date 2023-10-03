@@ -7,5 +7,5 @@ export interface RequestConfigModel {
     [index: string]: string;
   };
   params?: HttpParams;
-  data?: object;
+  body?: object;
 }
