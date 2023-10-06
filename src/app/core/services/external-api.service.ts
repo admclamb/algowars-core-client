@@ -1,7 +1,7 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import axios, { AxiosRequestConfig } from 'axios';
-import { Observable, mergeMap, of, catchError } from 'rxjs';
+import { catchError, mergeMap, Observable, of } from 'rxjs';
 import { ApiResponseModel, AppErrorModel, RequestConfigModel } from '../models';
 
 @Injectable({
@@ -67,8 +67,8 @@ export class ExternalApiService {
   ): Observable<ApiResponseModel> => {
     return this.http
       .request<unknown>(config.method, config.url, {
-        headers: config.headers,
-        params: config.params,
+        headers: { ...config.headers },
+        body: config.body,
       })
       .pipe(
         mergeMap((data) => {

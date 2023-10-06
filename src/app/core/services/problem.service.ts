@@ -1,13 +1,12 @@
+import { HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ExternalApiService } from './external-api.service';
 import { Observable, mergeMap, of } from 'rxjs';
 import { environment as env } from '../../../environments/environment';
-import { ApiResponseModel, AppErrorModel, RequestConfigModel } from '../models';
+import { ApiResponseModel, RequestConfigModel } from '../models';
+import { ProblemModel } from '../models/problem.model';
+import { ExternalApiService } from './external-api.service';
 import { PaginationConfig } from '../models/pagination-config.model';
-import { CreateProblemModel } from 'src/app/features/create-problem/models/create-problem.model';
-import { ProblemsModel } from 'src/app/features/problems/models/problems.model';
-import { HttpParams } from '@angular/common/http';
-import { ProblemModel } from 'src/app/features/problem/models/problem.model';
+import { ProblemsModel } from '../models/problems.model';
 
 @Injectable({
   providedIn: 'root',

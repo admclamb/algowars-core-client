@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AppErrorModel } from 'src/app/core/models';
 import { ProblemService } from 'src/app/core/services/problem.service';
-import { ProblemModel } from 'src/app/features/problem/models/problem.model';
+import { ProblemModel } from 'src/app/core/models/problem.model';
 
 @Component({
   selector: 'app-problems-table',

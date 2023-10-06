@@ -1,13 +1,20 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NotFoundComponent } from './not-found.component';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from '@app/shared';
+import { NotFoundComponent } from './not-found.component';
 
 @NgModule({
   declarations: [NotFoundComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild([{ path: '', component: NotFoundComponent }]),
+    SharedModule,
+    RouterModule.forChild([
+      {
+        path: '',
+        component: NotFoundComponent,
+      },
+    ]),
   ],
 })
 export class NotFoundModule {}

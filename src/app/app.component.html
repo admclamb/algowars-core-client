@@ -1,3 +1,8 @@
-<main class="bg-slate-900 min-h-screen flex flex-col text-white" id="main">
-  <router-outlet></router-outlet>
-</main>
+<div class="page-layout" *ngIf="isAuth0Loading$ | async; else auth0Loaded">
+  <app-page-loader></app-page-loader>
+</div>
+<ng-template #auth0Loaded>
+  <main class="bg-slate-900 min-h-screen flex flex-col text-white" id="main">
+    <router-outlet></router-outlet>
+  </main>
+</ng-template>

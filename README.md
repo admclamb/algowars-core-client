@@ -1,27 +1,13 @@
-# AlgowarsCoreClient
+# Angular/TypeScript: Basic User Authentication Code Sample
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.2.
+This TypeScript code sample demonstrates **how to implement user authentication** in Angular applications using Auth0. This Angular code sample builds the Single-Page Application (SPA) using Angular class components.
 
-## Development server
+This code sample is part of the ["Auth0 Developer Resources"](https://developer.auth0.com/resources), a place where you can explore the authentication and authorization features of the Auth0 Identity Platform.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Visit the ["Angular/TypeScript Code Sample: User Authentication For Basic Apps"](https://developer.auth0.com/resources/code-samples/spa/angular/basic-authentication) page for instructions on how to configure and run this code sample and how to integrate it with an API server of your choice to [create a full-stack code sample](https://developer.auth0.com/resources/code-samples/full-stack/hello-world/basic-access-control/spa).
 
-## Code scaffolding
+[![Angular/TypeScript Code Sample: User Authentication For Basic Apps](https://cdn.auth0.com/blog/hub/code-samples/spa/angular-typescript/basic-authentication.png)](https://developer.auth0.com/resources/code-samples/spa/angular/basic-authentication)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Why Use Auth0?
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Auth0 is a flexible drop-in solution to add authentication and authorization services to your applications. Your team and organization can avoid the cost, time, and risk that come with building your own solution to authenticate and authorize users. We offer tons of guidance and SDKs for you to get started and [integrate Auth0 into your stack easily](https://developer.auth0.com/resources/code-samples/full-stack).
