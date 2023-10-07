@@ -19,6 +19,18 @@ const routes: Routes = [
     canActivate: [AuthGuard, NoAccountGuard],
   },
   {
+    path: 'problems',
+    loadChildren: () =>
+      import('./features/problems/problems.module').then(
+        (m) => m.ProblemsModule
+      ),
+  },
+  {
+    path: 'problem/:problemId',
+    loadChildren: () =>
+      import('./features/problem/problem.module').then((m) => m.ProblemModule),
+  },
+  {
     path: 'profile',
     loadChildren: () =>
       import('./features/profile/profile.module').then((m) => m.ProfileModule),
