@@ -1,5 +1,7 @@
 <div class="page-layout" *ngIf="isAuth0Loading$ | async; else auth0Loaded">
-  <app-page-loader></app-page-loader>
+  <main class="bg-slate-900 min-h-screen flex flex-col text-white" id="main">
+    <app-page-loader></app-page-loader>
+  </main>
 </div>
 <ng-template #auth0Loaded>
   <main class="bg-slate-900 min-h-screen flex flex-col text-white" id="main">
