@@ -31,9 +31,10 @@
         />
       </div>
       <button
+        [disabled]="isLoadingValue"
         class="px-3 py-2 border rounded border-slate-700 hover:bg-slate-800 active:bg-slate-700 duration-200 ease-out"
       >
-        Finish Account
+        {{ isLoadingValue ? "Loading..." : "Finish Account" }}
       </button>
     </form>
   </div>

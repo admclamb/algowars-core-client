@@ -21,7 +21,7 @@ import { SharedModule } from './shared';
           `${env.api.serverUrl}/api/messages/admin`,
           `${env.api.serverUrl}/api/messages/protected`,
           `${env.api.serverUrl}/api/account/create`,
-          `${env.api.serverUrl}/api/problem/create`,
+          `${env.api.serverUrl}/api/account/find`,
         ],
       },
     }),

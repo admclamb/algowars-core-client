@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
 import { AppErrorModel } from 'src/app/core/models';
 import { AccountService } from 'src/app/core/services/account.service';
@@ -6,7 +7,6 @@ import { AccountService } from 'src/app/core/services/account.service';
 @Component({
   selector: 'app-account-setup',
   templateUrl: './account-setup.component.html',
-  styleUrls: ['./account-setup.component.css'],
 })
 export class AccountSetupComponent {
   user$ = this.auth.user$;
@@ -19,7 +19,8 @@ export class AccountSetupComponent {
 
   constructor(
     private auth: AuthService,
-    public accountService: AccountService
+    public accountService: AccountService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -53,11 +54,11 @@ export class AccountSetupComponent {
       };
     } else {
       this.accountService
-        .createAccount(this.username, this.userSub, this.accessToken)
+        .createAccount(this.username, this.userSub)
         .subscribe((response) => {
           const { data, error } = response;
           if (data) {
-            console.log(data);
+            this.router.navigate(['/']);
           }
           if (error) {
             this.error = error;
@@ -65,5 +66,9 @@ export class AccountSetupComponent {
         });
     }
     this.isLoading = false;
+  }
+
+  get isLoadingValue() {
+    return this.isLoading;
   }
 }

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '@auth0/auth0-angular';
+import { NoAccountGuard } from './core/guards/no-account.guard';
 
 const routes: Routes = [
   {
@@ -15,7 +16,7 @@ const routes: Routes = [
       import('./features/account/account-setup/account-setup.module').then(
         (m) => m.AccountSetupModule
       ),
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard, NoAccountGuard],
   },
   {
     path: 'profile',
