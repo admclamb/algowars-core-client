@@ -1,33 +1,42 @@
-<table class="table-auto w-full text-left text-slate-400">
-  <thead
-    class="text-slate-400 text-sm font-bold uppercase border-b border-slate-700"
-  >
-    <tr class="p-3">
-      <th scope="col" class="px-5 py-3">Title</th>
-      <th scope="col" class="px-5 py-3">Likes</th>
-      <th scope="col" class="px-5 py-3">Dislikes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr
-      *ngFor="let problem of problems; let i = index"
-      [ngClass]="{ 'bg-slate-700': i % 2 !== 0 }"
+<div class="flex flex-col gap-5">
+  <table class="table-auto w-full text-left text-slate-400">
+    <thead
+      class="text-slate-400 text-sm font-bold uppercase border-b border-slate-700"
     >
-      <th
-        scope="row"
-        class="px-5 py-3 font-medium text-white whitespace-nowrap"
+      <tr class="p-3">
+        <th scope="col" class="px-5 py-3">Title</th>
+        <th scope="col" class="px-5 py-3">Likes</th>
+        <th scope="col" class="px-5 py-3">Dislikes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let problem of problems; let i = index"
+        [ngClass]="{ 'bg-slate-700': i % 2 !== 0 }"
       >
-        <a
-          [routerLink]="['/problem', problem.id]"
-          class="hover:underline underline-offset-1"
-          >{{ problem.title }}</a
+        <th
+          scope="row"
+          class="px-5 py-2 font-medium text-white whitespace-nowrap"
         >
-      </th>
-      <td class="px-5 py-4">{{ problem.likes }}</td>
-      <td class="px-5 py-4">{{ problem.dislikes }}</td>
-    </tr>
-  </tbody>
-</table>
-<div *ngIf="problems.length === 0">
-  <p class="px-5 py-4">No Problems found.</p>
+          <a
+            [routerLink]="['/problem', problem.id]"
+            class="hover:underline underline-offset-1"
+            >{{ problem.title }}</a
+          >
+        </th>
+        <td class="px-5 py-2">{{ problem.likes }}</td>
+        <td class="px-5 py-2">{{ problem.dislikes }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="problems.length === 0">
+    <p class="px-5 py-2">No Problems found.</p>
+  </div>
+  <app-problems-table-paginator
+    [size]="size"
+    (changeSize)="changeSize($event)"
+    [page]="page"
+    [totalPages]="totalPages"
+    (changePage)="changePage($event)"
+  ></app-problems-table-paginator>
 </div>

@@ -7,6 +7,8 @@ import { Auth0FeaturesComponent } from './components/auth0-features.component';
 import { LoginButtonComponent } from './components/buttons/login-button.component';
 import { LogoutButtonComponent } from './components/buttons/logout-button.component';
 import { SignupButtonComponent } from './components/buttons/signup-button.component';
+import { ProblemsTablePaginatorComponent } from './components/problems/problems-table-paginator/problems-table-paginator.component';
+import { ProblemsTableOptionsComponent } from './components/problems/problems-table-options/problems-table-options.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { SignupButtonComponent } from './components/buttons/signup-button.compon
     LoginButtonComponent,
     LogoutButtonComponent,
     SignupButtonComponent,
+    ProblemsTablePaginatorComponent,
+    ProblemsTableOptionsComponent,
   ],
   imports: [
     CommonModule,

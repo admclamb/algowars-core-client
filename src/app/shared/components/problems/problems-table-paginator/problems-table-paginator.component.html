@@ -1,0 +1,77 @@
+<div class="flex justify-between h-10">
+  <div class="relative">
+    <button
+      class="px-2.5 py-1.5 h-full bg-slate-800 rounded hover:bg-slate-700 active:bg-slate-600 ease-out duration-200"
+      (click)="toggleDropdown()"
+    >
+      {{ size }} / page <i class="fa-solid fa-chevron-down"></i>
+    </button>
+    <ul
+      (clickOutside)="closeDropdown()"
+      *ngIf="isDropdownOpen"
+      class="absolute top-[110%] left-[0%] bg-slate-800 rounded p-1.5 flex flex-col gap-1.5"
+    >
+      <li>
+        <button
+          class="flex px-2.5 py-1.5 w-32 rounded hover:bg-slate-700 active:bg-slate-600 duration-200 ease-out"
+          (click)="changeSizeCount(20)"
+        >
+          20 / page
+          <span *ngIf="size === 20" class="ml-auto"
+            ><i class="fa-solid fa-check text-purple-300"></i
+          ></span>
+        </button>
+      </li>
+      <li>
+        <button
+          class="flex px-2.5 py-1.5 w-32 rounded hover:bg-slate-700 active:bg-slate-600 duration-200 ease-out"
+          (click)="changeSizeCount(50)"
+        >
+          50 / page<span *ngIf="size === 50" class="ml-auto"
+            ><i class="fa-solid fa-check text-purple-300"></i
+          ></span>
+        </button>
+      </li>
+      <li>
+        <button
+          class="flex px-2.5 py-1.5 w-32 rounded hover:bg-slate-700 active:bg-slate-600 duration-200 ease-out"
+          (click)="changeSizeCount(100)"
+        >
+          100 / page<span *ngIf="size === 100" class="ml-auto"
+            ><i class="fa-solid fa-check text-purple-300"></i
+          ></span>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <nav role="navigation">
+    <ul class="flex gap-3">
+      <li>
+        <button
+          class="px-2.5 py-1.5 bg-slate-800 h-full rounded hover:bg-slate-700 active:bg-slate-600 duration-200 ease-out disabled:bg-slate-800 disabled:cursor-not-allowed"
+          (click)="changeSizeCount(page - 1)"
+          [disabled]="page === 1"
+        >
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+      </li>
+      <li>
+        <button
+          class="px-2.5 py-1.5 bg-slate-800 h-full rounded hover:bg-slate-700 active:bg-slate-600 duration-200 ease-out disabled:bg-slate-700 disabled:cursor-not-allowed"
+          [disabled]="true"
+        >
+          {{ page }}
+        </button>
+      </li>
+      <li>
+        <button
+          class="px-2.5 py-1.5 bg-slate-800 h-full rounded hover:bg-slate-700 active:bg-slate-600 duration-200 ease-out disabled:bg-slate-800 disabled:cursor-not-allowed"
+          (click)="changeSizeCount(page + 1)"
+          [disabled]="page === totalPages"
+        >
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</div>

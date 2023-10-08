@@ -19,17 +19,16 @@ export class ProblemService {
     size,
     timestamp,
   }: PaginationConfig): Observable<ApiResponseModel<ProblemsModel | null>> {
-    const params = new HttpParams()
-      .set('page', page)
-      .set('size', size)
-      .set('timestamp', timestamp.toISOString());
     const config: RequestConfigModel = {
-      url: `${env.api.serverUrl}/api/problem`,
+      url: `${env.api.serverUrl}/api/problem?page=${encodeURIComponent(
+        page
+      )}&size=${encodeURIComponent(size)}&timestamp=${encodeURIComponent(
+        timestamp.toISOString()
+      )}`,
       method: 'GET',
       headers: {
         'content-type': 'application/json',
       },
-      params,
     };
 
     return this.externalApiService.callExternalApi(config).pipe(
