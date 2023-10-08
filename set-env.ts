@@ -37,14 +37,6 @@ const envConfigFile = `export const environment = {
   },
 };
 `;
-console.log(
-  'T: ',
-  targetPath,
-  'ENV: ',
-  envConfigFile,
-  'TARGET: ',
-  defaultTargetPath
-);
 if (fs.existsSync(targetPath)) {
   fs.writeFileSync(targetPath, envConfigFile);
 } else {
