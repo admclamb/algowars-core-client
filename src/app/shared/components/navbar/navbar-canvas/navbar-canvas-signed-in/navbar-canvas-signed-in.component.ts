@@ -8,6 +8,5 @@ import { AuthService } from '@auth0/auth0-angular';
 })
 export class NavbarCanvasSignedInComponent {
   user$ = this.auth.user$;
-
   constructor(private auth: AuthService) {}
 }

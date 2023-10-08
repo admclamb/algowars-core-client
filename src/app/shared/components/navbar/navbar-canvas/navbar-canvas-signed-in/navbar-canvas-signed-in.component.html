@@ -9,7 +9,7 @@
       id="canvas-avatar"
     ></app-avatar>
     <div class="flex flex-col">
-      <span>{{ (user$ | async)?.nickname }}</span>
+      <span>{{ (user$ | async)?.name }}</span>
       <span class="text-sm text-slate-400">{{
         "@" + (user$ | async)?.email
       }}</span>

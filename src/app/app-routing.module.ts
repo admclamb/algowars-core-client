@@ -31,6 +31,14 @@ const routes: Routes = [
       import('./features/problem/problem.module').then((m) => m.ProblemModule),
   },
   {
+    path: 'create/problem',
+    loadChildren: () =>
+      import('./features/create-problem/create-problem.module').then(
+        (m) => m.CreateProblemModule
+      ),
+    canActivate: [AuthGuard],
+  },
+  {
     path: 'profile',
     loadChildren: () =>
       import('./features/profile/profile.module').then((m) => m.ProfileModule),
