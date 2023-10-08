@@ -1,15 +1,28 @@
-const { writeFile } = require('fs');
-const { promisify } = require('util');
+const fs = require('fs');
 const dotenv = require('dotenv');
+const path = require('path');
 
 dotenv.config();
 
-const writeFilePromisified = promisify(writeFile);
+const environment = process.env['ENVIRONMENT'];
+console.log('ENVIROMENT: ', environment);
 
-const targetPath = './src/environments/environment.ts';
+const targetDir = path.join(__dirname, 'src/environments');
+const targetPath = path.join(
+  targetDir,
+  `environment${
+    environment
+      ? environment === 'production'
+        ? `.${environment.slice(0, 4)}`
+        : `.${environment}`
+      : ''
+  }.ts`
+);
+
+const defaultTargetPath = path.join(targetDir, 'environment.ts');
 
 const envConfigFile = `export const environment = {
-  production: false,
+  production: '${process.env['ENVIRONMENT']}',
   auth0: {
     domain: '${process.env['AUTH0_DOMAIN']}',
     clientId: '${process.env['AUTH0_CLIENT_ID']}',
@@ -24,12 +37,21 @@ const envConfigFile = `export const environment = {
   },
 };
 `;
-
-(async () => {
-  try {
-    await writeFilePromisified(targetPath, envConfigFile);
-  } catch (err) {
-    console.error(err);
-    throw err;
-  }
-})();
+console.log(
+  'T: ',
+  targetPath,
+  'ENV: ',
+  envConfigFile,
+  'TARGET: ',
+  defaultTargetPath
+);
+if (fs.existsSync(targetPath)) {
+  fs.writeFileSync(targetPath, envConfigFile);
+} else {
+  fs.writeFile(targetPath, envConfigFile, (err: unknown) => {});
+}
+if (fs.existsSync(defaultTargetPath)) {
+  fs.writeFileSync(defaultTargetPath, envConfigFile);
+} else {
+  fs.writeFile(defaultTargetPath, envConfigFile, (err: unknown) => {});
+}
