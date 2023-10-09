@@ -15,6 +15,6 @@ import { PublicComponent } from './public.component';
         component: PublicComponent,
       },
     ]),
-  ]
+  ],
 })
 export class PublicModule {}

@@ -21,12 +21,7 @@ import { ProblemsTableOptionsComponent } from './components/problems/problems-ta
     ProblemsTablePaginatorComponent,
     ProblemsTableOptionsComponent,
   ],
-  imports: [
-    CommonModule,
-    RouterModule
-  ],
-  exports: [
-    ...COMPONENTS
-  ],
+  imports: [CommonModule, RouterModule],
+  exports: [...COMPONENTS],
 })
 export class SharedModule {}

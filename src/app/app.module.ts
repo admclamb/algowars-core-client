@@ -6,9 +6,10 @@ import { environment as env } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared';
+import { TextFormattingPipe } from './core/pipes/text-formatting.pipe';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, TextFormattingPipe],
   imports: [
     BrowserModule,
     AppRoutingModule,
