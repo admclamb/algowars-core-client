@@ -12,6 +12,8 @@ import { AppErrorModel } from 'src/app/core/models';
 export class ProblemComponent {
   problem: ProblemModel | null = null;
   error: AppErrorModel | null = null;
+  code: string = '';
+  sampleTests: string = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -28,6 +30,8 @@ export class ProblemComponent {
             const { data, error } = response;
             if (data) {
               this.problem = data;
+              this.code = data.infos[0]?.baseCode ?? '';
+              this.sampleTests = '';
             }
             if (error) {
               this.error = error;

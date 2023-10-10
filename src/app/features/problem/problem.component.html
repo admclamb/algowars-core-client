@@ -7,8 +7,11 @@
         class="col-span-5"
       ></app-problem-question>
       <div class="col-span-7 flex flex-col gap-5">
-        <app-problem-code class="h-[60%]"></app-problem-code>
-        <app-problem-test class="h-[40%]"></app-problem-test>
+        <app-problem-code class="h-[60%]" [code]="code"></app-problem-code>
+        <app-problem-test
+          class="h-[40%]"
+          [sampleTests]="sampleTests"
+        ></app-problem-test>
       </div>
     </div>
     <div class="border-t border-slate-700 p-5 flex">

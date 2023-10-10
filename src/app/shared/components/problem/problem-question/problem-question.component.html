@@ -7,4 +7,19 @@
       [question]="problem.question"
     ></app-problem-question-parser>
   </div>
+
+  <div class="flex gap-3 items-center">
+    <hr class="border-slate-600 py-2" />
+    <i class="fa-solid fa-tag"></i>
+    <ul class="flex gap-3">
+      <li *ngFor="let category of problem.problemCategories" class="text-sm">
+        <a
+          routerLink="/"
+          class="px-1.5 py-1.5 bg-slate-950 rounded hover:underline"
+        >
+          {{ category.category.name }}
+        </a>
+      </li>
+    </ul>
+  </div>
 </div>
