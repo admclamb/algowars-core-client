@@ -1,1 +1,19 @@
-<div id="editor" #editor class="monaco-editor editor"></div>
+<div class="relative h-full" (click)="focusOnCode($event)">
+  <textarea
+    [value]="code"
+    (input)="onTextareaChange($event)"
+    class="absolute w-[1px] h-[1em] resize-none border-0 outline-none"
+    #childTextarea
+  ></textarea>
+  <div class="absolute left-0 w-10 border-r border-slate-700 h-full"></div>
+  <div
+    *ngFor="let line of formatCode(code); let i = index"
+    class="flex items-center block h-6 gap-2"
+  >
+    <div class="text-sm text-right ml-1 w-6 text-slate-500">
+      <p>{{ i + 1 }}</p>
+    </div>
+    <pre><div class="pl-4" [innerHTML]="line"></div></pre>
+  </div>
+  <div #caretElement class="h-6 w-4 bg-black"></div>
+</div>

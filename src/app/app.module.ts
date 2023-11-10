@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared';
 import { TextFormattingPipe } from './core/pipes/text-formatting.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, TextFormattingPipe],
@@ -26,6 +27,7 @@ import { TextFormattingPipe } from './core/pipes/text-formatting.pipe';
         ],
       },
     }),
+    FormsModule,
   ],
   providers: [
     {
